@@ -9,16 +9,17 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <style>
-    .ticket {
-        display: none;
-    }
+        .ticket {
+            display: none;
+        }
     </style>
 </head>
 
 <body class="container">
     <div class="confirmation">
         <h2>Ticket Confirmation</h2>
-        <p class="text-success">Congrats you have successfully confirmed booking !</p>
+        <h3 class="text-info">Ticket ...</h3>
+        <p>You paid $300 on 13th Jan 2016</p>
         <button class="btn btn-primary">Flight Details</button>
         <ul class="ticket">
             <h4>Air India</h4>
@@ -26,17 +27,28 @@
             <p>Price: $300</p>
         </ul>
     </div>
-    
     <script>
         $(document).ready(function() {
-            console.log($('button').length); // returns length of the selected dom elements
+            //you can use multiple mouse events like 
+            //click, focusin, mousedown, mousemove, mouseover, mouseenter, dblclick, focusout, mouseup, mouseout, mouseleave
             $('.confirmation').on('click', 'button', function() {
-            	console.log('button clicked'); // debug whether button is clicked or not
                 $(this).closest('.confirmation').find('.ticket').slideDown();
             });
-        });
-    </script>
 
+            //duplications
+            $('.confirmation').on('mouseenter', 'h3', function() {
+                $(this).closest('.confirmation').find('.ticket').slideDown();
+            });
+
+           /* $('.confirmation').on('mouseenter', 'button', showTicket);
+            $('.confirmation').on('mouseenter', 'h3', showTicket);*/
+        });
+
+        /*function showTicket() {
+            $(this).closest('.confirmation').find('.ticket').slideDown();
+        }*/
+        
+    </script>
 </body>
 
 </html>

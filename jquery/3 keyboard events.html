@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Details</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+    .ticket {
+        display: none;
+    }
+    </style>
+</head>
+
+<body class="container">
+    <div class="vacation" data-price="300">
+        <h2>Trip Planner</h2>
+        <h3 class="text-info">Package</h3>
+        <div class="well">
+            <h4 class="text-danger">Hill Station</h4>
+            <p>$300 per ticket</p>
+            <label>Tickets</label>
+            <br>
+            <input type="number" class="quantity" value="1">
+        </div>
+        <br>
+        <br>
+        <b>Total Price: $<span id="total">300</1span></b>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('.vacation').on('keyup', '.quantity', function() {
+            //get the price
+            //get the quantity
+            //set the total to price * quantity
+
+            var price = +$(this).closest('.vacation').data('price');
+            var quantity = +$(this).val();
+            $('#total').text(price * quantity);
+        });
+        /*
+         *keyboard events
+         *https://api.jquery.com/category/events/keyboard-events/
+         *
+         * form events
+         * https://api.jquery.com/category/events/form-events/
+         */
+    });
+    </script>
+</body>
+
+</html>
