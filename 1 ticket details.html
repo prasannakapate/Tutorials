@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Details</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+    .ticket {
+        display: none;
+    }
+    </style>
+</head>
+
+<body class="container">
+    <div class="confirmation">
+        <button class="btn btn-primary">Flight Details</button>
+        <ul class="ticket">
+            <h2>Air India</h2>
+            <p>price: $300</p>
+        </ul>
+    </div>
+    <script>
+    $(document).ready(function() {
+        console.log($('button').length);
+        $('.confirmation').on('click', 'button', function() {
+        	console.log('button clicked');
+            $(this).closest('.confirmation').find('.ticket').slideDown();
+        });
+    });
+    </script>
+</body>
+
+</html>
