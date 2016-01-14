@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ticket Details</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<style>
+		.comments {
+			display: none;
+		}
+	</style>
+</head>
+
+<body class="container">
+	<div class="row">
+		<h2>Trip Planner</h2>
+		<h3 class="text-info">Packages</h3>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 vacation">
+			<div class="well">
+				<h4>Visit Australia</h4>
+				<button class="btn btn-primary btn-block">Get Price</button>
+				<br>
+				<br>
+				<a href="#" class="expand">Show comments</a>
+				<ul class="comments">
+					<li>Great, Beautiful, Awesome</li>
+					<li>I love India</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-4 vacation">
+			<div class="well">
+				<h4>Great India Tour</h4>
+				<button class="btn btn-primary btn-block">Get Price</button>
+				<br>
+				<br>
+				<a href="#" class="expand">Show comments</a>
+				<ul class="comments">
+					<li>Comments</li>
+					<li>Awesome Deal !</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-4 vacation">
+			<div class="well">
+				<h4>Europe Holiday</h4>
+				<button class="btn btn-primary btn-block">Get Price</button>
+				<br>
+				<br>
+				<a href="#" class="expand">Show comments</a>
+				<ul class="comments">
+					<li>Comments</li>
+					<li>Amazing food</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			$('.vacation').on('click', '.expand',
+				function (event) {
+					event.preventDefault();
+					$(this).closest('.vacation')
+						.find('.comments')
+						.fadeToggle(); //you can use fadeIn,fadeOut
+				});
+		});
+	</script>
+</body>
+
+</html>
